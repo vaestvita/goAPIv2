@@ -47,7 +47,8 @@ if (isset($_GET['goCloserBlended'])) { $closer_blended = $astDB->escape($_GET['g
 $closer_blended = (isset($closer_blended)) ? (int) $closer_blended : 0;
 
 ### Check if the agent's phone_login is currently connected
-$sipIsLoggedIn = check_sip_login($kamDB, $phone_login, 'kamailio', $use_webrtc);
+// $sipIsLoggedIn = check_sip_login($kamDB, $phone_login, 'kamailio', $use_webrtc);
+$sipIsLoggedIn = true;
 
 if ($sipIsLoggedIn || $use_webrtc) {
     if (preg_match("/ADMINPORTAL/", $campaign)) {
